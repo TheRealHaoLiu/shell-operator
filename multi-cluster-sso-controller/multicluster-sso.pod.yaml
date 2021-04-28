@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multicluster-sso-controller
+  namespace: open-cluster-management
+spec:
+  containers:
+  - name: shell-operator
+    image: yoloswag.io/shell-operator:latest
+    imagePullPolicy: Never
+  serviceAccountName: default

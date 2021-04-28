@@ -1,0 +1,19 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterClaim
+metadata:
+  name: e2e
+  namespace: app
+spec:
+  clusterPoolName: app-aws-46-hub
+  namespace: app-aws-46-hub-4wr8k
+  subjects:
+  - kind: ServiceAccount
+    name: kevinfcormier
+    namespace: app
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: AppLifecycle
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: system:serviceaccounts:app
+
